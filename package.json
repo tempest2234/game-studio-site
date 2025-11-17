@@ -1,0 +1,8 @@
+{
+  "name": "my-simple-site",
+  "version": "1.0.0",
+  "description": "Simple site hosted on Firebase",
+  "scripts": {
+    "start": "echo \"No build step required\""
+  }
+}
