@@ -1,52 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nexify Games</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hashira Games — Demon Slayer Theme</title>
+  <meta name="description" content="Hashira Games — Indie studio showcase. Dark, Japanese-inspired design with animated effects." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- particle canvas for embers -->
+  <canvas id="embers" aria-hidden="true"></canvas>
 
-<header>
-    <h1>Nexify Games</h1>
-    <p>The Home of Our Projects</p>
-</header>
-
-<section class="game-section">
-
-    <!-- GAME CARD 1 -->
-    <div class="game-card">
-        <img src="images/game1.png" alt="Game 1">
-        <h2>Game Title 1</h2>
-        <p>A short description of the game.</p>
-
-        <div class="buttons">
-            <a href="games/game1/index.html" class="play-btn">Play</a>
-            <a href="downloads/game1.zip" class="download-btn">Download</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-katana" aria-hidden="true">🗡️</div>
+        <div>
+          <h1>Hashira Games</h1>
+          <p class="tag">Furious Favor • Lions_sin</p>
         </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false">Menu ▾</button>
+        <ul id="navList" class="nav-list" role="menubar">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#games">Games</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- GAME CARD 2 -->
-    <div class="game-card">
-        <img src="images/game2.png" alt="Game 2">
-        <h2>Game Title 2</h2>
-        <p>Description of your second game.</p>
-
-        <div class="buttons">
-            <a href="games/game2/index.html" class="play-btn">Play</a>
-            <a href="downloads/game2.zip" class="download-btn">Download</a>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <h2 class="hero-title">Hashira Games</h2>
+          <p class="hero-sub">Forged in flame. Fast, fierce, and beautiful.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#games">View Games</a>
+            <a class="btn btn-outline" href="#about">About Us</a>
+          </div>
         </div>
+        <div class="hero-art">
+          <!-- hero image fallback -->
+          <img src="images/hero.jpg" alt="Hero artwork" onerror="this.style.display='none'">
+        </div>
+      </div>
+      <div class="paper-wave" aria-hidden="true"></div>
+    </section>
+
+    <section id="games" class="games container">
+      <h3 class="section-title">Featured Games</h3>
+      <div class="games-grid" id="gamesGrid">
+        <!-- Game card 1 -->
+        <article class="game-card" data-title="Furious Favor" data-slug="furious-favor">
+          <div class="cover">
+            <img src="images/game1-cover.jpg" alt="Furious Favor cover">
+          </div>
+          <div class="card-body">
+            <h4>Furious Favor</h4>
+            <p class="muted">2D mobile online multiplayer brawler — fast combos, tactical dodges.</p>
+            <div class="tags">
+              <span>multiplayer</span><span>mobile</span><span>action</span>
+            </div>
+            <div class="card-actions">
+              <button class="btn play-btn" data-trailer="https://www.youtube.com/embed/dQw4w9WgXcQ">Watch Trailer</button>
+              <a class="btn download-btn" href="downloads/game1.zip" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game card 2 -->
+        <article class="game-card" data-title="Lions_sin" data-slug="lions-sin">
+          <div class="cover">
+            <img src="images/game2-cover.jpg" alt="Lions_sin cover">
+          </div>
+          <div class="card-body">
+            <h4>Lions_sin</h4>
+            <p class="muted">Story-driven 2D RPG — haunting soundtrack, deep narrative.</p>
+            <div class="tags">
+              <span>rpg</span><span>singleplayer</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn play-btn" href="games/lions-sin/index.html">Play</a>
+              <a class="btn download-btn" href="downloads/game2.zip" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3 class="section-title">About Hashira Games</h3>
+      <p>We are a small indie studio crafting focused experiences — mobile brawlers and story-driven RPGs. Our art direction takes inspiration from Japanese aesthetics and cinematic combat. We build fast prototypes, polish them, and ship meaningful moments.</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3 class="section-title">Contact</h3>
+      <p>Email: <a href="mailto:hello@hashiragames.example">hello@hashiragames.example</a></p>
+      <p>Discord: <code>#hashira</code> — Drop us a message to get assets or press kit.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Hashira Games — All rights reserved</p>
+      <p class="muted">Art and UI inspired by classic Japanese motifs — this is a fan-styled theme for your game studio.</p>
     </div>
+  </footer>
 
-    <!-- Add more game cards here -->
+  <!-- Trailer modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" data-close aria-label="Close">✕</button>
+      <div class="modal-content" id="modalContent">
+        <!-- iframe gets injected here -->
+      </div>
+    </div>
+  </div>
 
-</section>
-
-<footer>
-    © 2025 Nexify — All Rights Reserved
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
 
