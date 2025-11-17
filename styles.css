@@ -1,1 +1,97 @@
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #1b1b1b;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+header p {
+    color: #bbbbbb;
+    font-size: 18px;
+}
+
+/* GAME SECTION */
+.game-section {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* GAME CARD */
+.game-card {
+    background: #191919;
+    width: 300px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    background: #232323;
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.play-btn, .download-btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+}
+
+.play-btn {
+    background: #0a84ff;
+}
+
+.play-btn:hover {
+    background: #006bd6;
+}
+
+.download-btn {
+    background: #3f3f3f;
+}
+
+.download-btn:hover {
+    background: #575757;
+}
+
+/* FOOTER */
+footer {
+    background: #1b1b1b;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    color: #888;
+}
 
